@@ -4,7 +4,12 @@ module "azurerm_resource_group" {
   rg       = "pratTodoRG"
   location = "eastus"
 }
+module "azurerm_resource_group" {
+  source = "../infra/azurerm_resource_group"
 
+  rg       = "pratTodoRG1"
+  location = "eastus"
+}
 module "azurerm_sql_server" {
   depends_on = [module.azurerm_resource_group]
   source     = "../infra/azurerm_sql_server"
